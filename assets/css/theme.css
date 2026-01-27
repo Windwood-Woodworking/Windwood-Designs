@@ -253,6 +253,20 @@ p {
   box-shadow: 0 6px 18px var(--shadow-strong);
 }
 
+/* Three images in a row */
+.three-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: nowrap;
+}
+
+.three-row .gallery-item {
+  flex: 1 1 0;
+  max-width: 220px;
+}
+
 /* --------------------------------------------------
    GALLERY CAPTIONS
    -------------------------------------------------- */
@@ -287,6 +301,12 @@ p {
   .gallery-item .caption {
     font-size: 0.85rem;
     padding: 0 var(--space-xs);
+  }
+}
+
+@media (max-width: 600px) {
+  .three-row {
+    flex-wrap: wrap;
   }
 }
 
@@ -496,13 +516,12 @@ p {
 }
 
 .hero-logo {
-  width: 60%;
-  max-width: 500px;
-  height: auto;
   display: block;
-  margin: 0 auto;
-  background: #222;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
 }
+
 
 .hero-tagline {
   margin-top: var(--space-sm);
