@@ -287,3 +287,61 @@ p {
   margin: 0 auto var(--space-lg);
   text-shadow: 0 1px 2px var(--shadow-soft);
 }
+
+/* --------------------------------------------------
+   NAVIGATION BAR
+   -------------------------------------------------- */
+.navbar {
+  width: 100%;
+  background: var(--wine-dark);
+  padding: var(--space-sm) 0;
+  box-shadow: 0 2px 6px var(--shadow-strong);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+/* Nav links */
+.navbar a {
+  font-family: var(--font-accent); /* Laila */
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: var(--oak-gold);
+  background: rgba(153, 102, 51, 0.15); /* oak gold tint */
+}
+
+/* Active page indicator */
+.navbar a.active {
+  color: var(--oak-gold);
+  font-weight: 600;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .navbar-inner {
+    gap: var(--space-md);
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+    padding: var(--space-xs);
+  }
+}
