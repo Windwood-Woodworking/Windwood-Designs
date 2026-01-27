@@ -450,3 +450,58 @@ p {
   color: var(--text-soft);
   text-shadow: 0 1px 2px var(--shadow-soft);
 }
+
+/* --------------------------------------------------
+   HOMEPAGE HERO
+   -------------------------------------------------- */
+.homepage-hero {
+  max-width: 800px;
+  margin: var(--space-xl) auto var(--space-lg);
+  text-align: center;
+  padding: 0 var(--space-sm);
+}
+
+.hero-logo {
+  width: 100%;
+  height: auto;
+  background: #222;
+  border-radius: 0;
+  box-shadow: 0 0 0 rgba(0,0,0,0.6);
+}
+
+.hero-tagline {
+  margin-top: var(--space-sm);
+  font-family: var(--font-accent);
+  font-size: var(--fs-lg);
+  color: var(--oak-gold);
+  text-shadow: 0 1px 2px var(--shadow-strong);
+}
+
+/* --------------------------------------------------
+   HOMEPAGE CONTENT
+   -------------------------------------------------- */
+.homepage-intro,
+.homepage-section {
+  max-width: 800px;
+  margin: var(--space-xl) auto;
+  padding: 0 var(--space-sm);
+  text-align: center;
+}
+
+.homepage-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--text-soft);
+  line-height: var(--lh-loose);
+}
+
+.philosophy-text {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--text-soft);
+  line-height: var(--lh-loose);
+  text-shadow: 0 1px 2px var(--shadow-soft);
+}
