@@ -87,7 +87,7 @@ body {
    -------------------------------------------------- */
 .site-title {
   font-family: 'Tangerine', cursive;
-  font-size: 3.2rem;
+  font-size: 4rem;
   font-weight: 400;
   color: #b86a4c; /* warm red‑wood tone */
   text-align: center;
@@ -114,7 +114,7 @@ body {
 .page-title,
 h1.page-title {
   font-family: var(--font-title);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   font-weight: 700;
   color: var(--text-warm);
   line-height: var(--lh-tight);
