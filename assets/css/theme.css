@@ -43,21 +43,21 @@
   margin: 0 auto;
   padding: 0 2rem;
 
-  /* Soft walnut-tinted background */
-  background: rgba(153, 102, 51, 0.04);
+  /* Warm walnut glow */
+  background: rgba(153, 102, 51, 0.08);
 
-  /* Gentle inner glow to lift content */
+  /* Stronger inner glow */
   box-shadow:
-    0 0 40px rgba(0, 0, 0, 0.6),
-    inset 0 0 30px rgba(0, 0, 0, 0.4);
+    0 0 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 40px rgba(0, 0, 0, 0.55);
 
-  /* Vertical rails (very subtle) */
-  border-left: 1px solid rgba(153, 102, 51, 0.15);
-  border-right: 1px solid rgba(153, 102, 51, 0.15);
+  /* Visible rails */
+  border-left: 2px solid rgba(153, 102, 51, 0.25);
+  border-right: 2px solid rgba(153, 102, 51, 0.25);
 
-  /* Smooth edges */
   border-radius: 6px;
 }
+
 
 body {
   background: radial-gradient(
