@@ -126,5 +126,133 @@ p {
   color: var(--text-soft);
   text-transform: uppercase;
   letter-spacing: 1px;
+   
+}
+:root {
+  /* Core brand colors */
+  --black: #000000;
+  --wine-dark: #330000;
+  --walnut: #663300;
+  --oak-gold: #996633;
+
+  /* Neutrals */
+  --grey-soft: #cccccc;
+  --grey-light: #eeeeee;
+
+  /* Text colors */
+  --text-light: #f5f5f5;
+  --text-soft: var(--grey-soft);
+  --text-warm: var(--oak-gold);
+  --text-body: #dddddd;
+
+  /* Shadows */
+  --shadow-strong: rgba(0,0,0,0.7);
+  --shadow-soft: rgba(0,0,0,0.5);
+}
+
+.divider {
+  width: 100%;
+  margin: 2.5rem 0;
+}
+
+.divider-line {
+  height: 2px;
+  background: var(--walnut);
+  opacity: 0.7;
+  margin: 3px 0;
+}
+
+.divider-line.center {
+  background: var(--grey-soft);
+  opacity: 0.5;
+}
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-line center"></div>
+  <div class="divider-line"></div>
+</div>
+
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+}
+
+/* --------------------------------------------------
+   GALLERY CONTAINER
+   -------------------------------------------------- */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 900px;
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--space-sm);
+}
+
+/* --------------------------------------------------
+   GALLERY ITEM
+   -------------------------------------------------- */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --------------------------------------------------
+   GALLERY IMAGES
+   -------------------------------------------------- */
+.gallery-item img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--shadow-strong);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 18px var(--shadow-strong);
+}
+
+/* --------------------------------------------------
+   GALLERY CAPTIONS
+   -------------------------------------------------- */
+.gallery-item .caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  margin-top: var(--space-sm);
+  max-width: 700px;
+  text-shadow: 0 1px 2px var(--shadow-soft);
+  line-height: var(--lh-normal);
+}
+
+.gallery-item img {
+  background: var(--wine-dark);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* --------------------------------------------------
+   MOBILE GALLERY TWEAKS
+   -------------------------------------------------- */
+@media (max-width: 600px) {
+  .gallery {
+    gap: var(--space-md);
+  }
+
+  .gallery-item img {
+    border-radius: 4px;
+  }
+
+  .gallery-item .caption {
+    font-size: 0.85rem;
+    padding: 0 var(--space-xs);
+  }
 }
 
