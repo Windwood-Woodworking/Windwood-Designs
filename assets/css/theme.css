@@ -34,10 +34,38 @@
   --text-body: #ddd;
 }
 
+/* --------------------------------------------------
+   CENTERED LAYOUT FRAME
+   -------------------------------------------------- */
+
 .page-container {
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 1px solid rgba(255,255,255,0.05);
-  border-right: 1px solid rgba(255,255,255,0.05);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  /* Soft walnut-tinted background */
+  background: rgba(153, 102, 51, 0.04);
+
+  /* Gentle inner glow to lift content */
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 30px rgba(0, 0, 0, 0.4);
+
+  /* Vertical rails (very subtle) */
+  border-left: 1px solid rgba(153, 102, 51, 0.15);
+  border-right: 1px solid rgba(153, 102, 51, 0.15);
+
+  /* Smooth edges */
+  border-radius: 6px;
+}
+
+body {
+  background: radial-gradient(
+    circle at center,
+    #000000 0%,
+    #0a0a0a 40%,
+    #000000 100%
+  );
 }
 
 
