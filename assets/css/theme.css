@@ -34,6 +34,12 @@
   --text-body: #ddd;
 }
 
+.page-container {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 1px solid rgba(255,255,255,0.05);
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+
 
 /* --------------------------------------------------
    GLOBAL TEXT DEFAULTS
