@@ -1,1 +1,130 @@
+/* --------------------------------------------------
+   FONT IMPORTS
+   -------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lora:wght@400;500;600&family=Laila:wght@400;500;600&display=swap');
+
+
+/* --------------------------------------------------
+   ROOT TYPOGRAPHY VARIABLES
+   -------------------------------------------------- */
+:root {
+  /* Font families */
+  --font-title: 'Tangerine', cursive;
+  --font-body: 'Lora', serif;
+  --font-accent: 'Laila', serif;
+
+  /* Font sizes (scalable rhythm) */
+  --fs-xxl: 4rem;     /* Hero titles */
+  --fs-xl: 3rem;      /* Page titles */
+  --fs-lg: 2rem;      /* Section headers */
+  --fs-md: 1.25rem;   /* Body large */
+  --fs-base: 1rem;    /* Body default */
+  --fs-sm: 0.9rem;    /* Captions */
+  --fs-xs: 0.75rem;   /* Tiny labels */
+
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  /* Colors (typography-focused) */
+  --text-light: #f5f5f5;
+  --text-soft: #ccc;
+  --text-warm: #996633;
+  --text-body: #ddd;
+}
+
+
+/* --------------------------------------------------
+   GLOBAL TEXT DEFAULTS
+   -------------------------------------------------- */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* --------------------------------------------------
+   TITLES (Tangerine)
+   -------------------------------------------------- */
+.page-title,
+h1.page-title {
+  font-family: var(--font-title);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--text-warm);
+  line-height: var(--lh-tight);
+  text-align: center;
+  margin: 0 0 1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--text-warm);
+  margin-bottom: 1rem;
+}
+
+
+/* --------------------------------------------------
+   BODY TEXT (Lora)
+   -------------------------------------------------- */
+.page-description {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--text-soft);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--text-body);
+}
+
+
+/* --------------------------------------------------
+   CAPTIONS (Lora)
+   -------------------------------------------------- */
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-soft);
+  margin-top: 0.5rem;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+
+/* --------------------------------------------------
+   ACCENTS & SUBHEADINGS (Laila)
+   -------------------------------------------------- */
+.subheading {
+  font-family: var(--font-accent);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text-warm);
+  margin: 1.5rem 0 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
