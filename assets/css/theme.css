@@ -256,3 +256,34 @@ p {
   }
 }
 
+/* --------------------------------------------------
+   PAGE INTRO BLOCK
+   -------------------------------------------------- */
+.page-intro {
+  max-width: 900px;
+  margin: var(--space-xl) auto var(--space-lg);
+  padding: 0 var(--space-sm);
+  text-align: center;
+}
+
+/* Title (Tangerine) */
+.page-intro .page-title {
+  font-family: var(--font-title);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--oak-gold);
+  margin-bottom: var(--space-sm);
+  line-height: var(--lh-tight);
+  text-shadow: 0 2px 4px var(--shadow-strong);
+}
+
+/* Description (Lora) */
+.page-intro .page-description {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--text-soft);
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+  text-shadow: 0 1px 2px var(--shadow-soft);
+}
