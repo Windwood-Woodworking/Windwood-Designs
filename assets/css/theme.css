@@ -433,3 +433,20 @@ p {
   background: var(--grey-soft);
   opacity: 0.5;
 }
+
+/* --------------------------------------------------
+   ABOUT PAGE CONTENT
+   -------------------------------------------------- */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--text-soft);
+  text-shadow: 0 1px 2px var(--shadow-soft);
+}
