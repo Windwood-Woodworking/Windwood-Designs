@@ -6,35 +6,16 @@
   <title>Windwood Designs</title>
 
   <link rel="stylesheet" href="assets/css/theme.css">
-
-  <style>
-    body {
-      background: var(--black);
-    }
-  </style>
 </head>
 
 <body>
 
   <div class="page-container">
 
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-      <div class="navbar-inner">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery/wall-art.html">Wall Art</a>
-        <a href="gallery/mirror-frames.html">Mirror Frames</a>
-        <a href="gallery/carvings.html">Carvings</a>
-        <a href="gallery/furniture.html">Furniture</a>
-        <a href="gallery/mantels.html">Mantels</a>
-        <a href="gallery/boxes.html">Boxes</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+    {% include header.html %}
 
     <!-- HERO LOGO BLOCK -->
-    <div class="homepage-hero">
+    <section class="hero">
       <img src="images/ww-logo-clean2-201.jpg" alt="Windwood Designs Logo" class="hero-logo">
 
       <p class="hero-tagline">
@@ -46,20 +27,20 @@
         <div class="divider-line center"></div>
         <div class="divider-line"></div>
       </div>
-    </div>
+    </section>
 
     <!-- INTRO TEXT BLOCK -->
-    <div class="homepage-intro">
+    <section class="page-intro">
       <h1 class="page-title">Windwood Woodworking</h1>
 
       <p class="page-description">
         Welcome to my workshop.<br>
         I build custom furniture, fine woodworking pieces, and CNC‑carved designs that blend traditional craft with modern tools.
       </p>
-    </div>
+    </section>
 
     <!-- WHAT I MAKE -->
-    <div class="homepage-section">
+    <section class="homepage-section">
       <h2 class="section-title">What I Make</h2>
 
       <ul class="homepage-list">
@@ -69,36 +50,31 @@
         <li>Mirror frames and wall art</li>
         <li>Bespoke woodwork</li>
       </ul>
-    </div>
+    </section>
 
     <!-- PHILOSOPHY -->
-    <div class="homepage-section">
+    <section class="homepage-section">
       <h2 class="section-title">Philosophy</h2>
 
       <p class="philosophy-text">
         Wood tells the truth.<br><br>
-
         Meaning arrives slowly, like dew settling on a morning surface.
         Notice the small pull and follow it without explanation.
         A felt direction is often truer than a planned route.<br><br>
-
         Listen for the quiet thread that asks to be followed.
         Form appears when attention softens and stays present.
         Resonance is a gentle alignment, not a loud proclamation.<br><br>
-
         Discovery happens in the space between looking and doing.
         Truth often arrives as a subtle confirmation, not a revelation.
         The world offers hints; we only need to be willing to receive them.<br><br>
-
         Presence shapes what unfolds, one quiet gesture at a time.<br><br>
-
         Every board has a story — grain, tension, scars, and surprises.
         My job is to listen, shape, and reveal what’s already there.
       </p>
-    </div>
+    </section>
 
     <!-- CURRENT PROJECTS -->
-    <div class="homepage-section">
+    <section class="homepage-section">
       <h2 class="section-title">Current Projects</h2>
 
       <ul class="homepage-list">
@@ -106,23 +82,15 @@
         <li>Designing a new line of small‑batch boxes</li>
         <li>Photographing past builds for the gallery</li>
       </ul>
-    </div>
+    </section>
 
     <!-- CONTACT -->
-    <div class="homepage-section">
+    <section class="homepage-section">
       <h2 class="section-title">Contact</h2>
       <p class="page-description">More coming soon.</p>
-    </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-divider">
-        <div class="footer-divider-line"></div>
-        <div class="footer-divider-line center"></div>
-        <div class="footer-divider-line"></div>
-      </div>
-      © Windwood Designs — Handcrafted Works in Wood
-    </footer>
+    {% include footer.html %}
 
   </div><!-- end page-container -->
 
