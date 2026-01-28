@@ -1,12 +1,12 @@
 /* --------------------------------------------------
    FONT IMPORTS
-   -------------------------------------------------- */
+-------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lora:wght@400;500;600&family=Laila:wght@400;500;600&display=swap');
 
 
 /* --------------------------------------------------
-   ROOT VARIABLES
-   -------------------------------------------------- */
+   ROOT VARIABLES — WINDWOOD PALETTE
+-------------------------------------------------- */
 :root {
   --font-title: 'Tangerine', cursive;
   --font-body: 'Lora', serif;
@@ -24,7 +24,7 @@
   --lh-normal: 1.5;
   --lh-loose: 1.7;
 
-  --black: #000000;
+  --black: #000;
   --wine-dark: #330000;
   --walnut: #663300;
   --oak-gold: #996633;
@@ -50,9 +50,9 @@
 
 /* --------------------------------------------------
    GLOBAL BACKGROUND + TEXT DEFAULTS
-   -------------------------------------------------- */
+-------------------------------------------------- */
 body {
-  background: radial-gradient(circle at center, #000000 0%, #0a0a0a 40%, #000000 100%);
+  background: radial-gradient(circle at center, #000 0%, #0a0a0a 40%, #000 100%);
   font-family: var(--font-body);
   font-size: var(--fs-base);
   line-height: var(--lh-normal);
@@ -64,11 +64,11 @@ body {
 
 
 /* --------------------------------------------------
-   MASTER PAGE FRAME (ONLY WIDTH CONSTRAINT)
-   -------------------------------------------------- */
+   MASTER PAGE FRAME
+-------------------------------------------------- */
 .page-container {
   width: 100%;
-  max-width: 900px;        /* ← THIS is the real width */
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 2rem;
 
@@ -82,17 +82,13 @@ body {
     inset 0 0 40px rgba(0, 0, 0, 0.55);
 }
 
-/* Everything inside the frame uses full width of the frame */
 .page-content,
 .gallery,
 .image-card,
 .navbar-inner,
-.homepage-sections,
-.about-content,
 .homepage-intro,
-.homepage-section {
+.about-content {
   width: 100%;
-  max-width: none;
   margin: 0 auto;
   padding: 0;
 }
@@ -100,16 +96,15 @@ body {
 
 /* --------------------------------------------------
    TITLES
-   -------------------------------------------------- */
+-------------------------------------------------- */
 .site-title {
-  font-family: 'Tangerine', cursive;
+  font-family: var(--font-title);
   font-size: 4rem;
   font-weight: 400;
-  color: #b86a4c;
+  color: var(--oak-gold);
   text-align: center;
   margin: 0;
   padding: 0.5rem 0;
-  position: relative;
 }
 
 .site-title::after {
@@ -118,33 +113,24 @@ body {
   width: 60%;
   height: 2px;
   margin: 0.4rem auto 0;
-  background: linear-gradient(to right, transparent, #b86a4c, transparent);
+  background: linear-gradient(to right, transparent, var(--oak-gold), transparent);
 }
 
-.page-title,
-h1.page-title {
+.page-title {
   font-family: var(--font-title);
   font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--text-warm);
   line-height: var(--lh-tight);
   text-align: center;
-  margin: 0 0 3rem;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-}
-
-.section-title {
-  font-family: var(--font-title);
-  font-size: var(--fs-lg);
-  font-weight: 700;
-  color: var(--text-warm);
-  margin-bottom: 1rem;
+  margin: 0 0 var(--space-lg);
+  text-shadow: 0 1px 3px var(--shadow-strong);
 }
 
 
 /* --------------------------------------------------
    BODY TEXT + CAPTIONS
-   -------------------------------------------------- */
+-------------------------------------------------- */
 p {
   font-family: var(--font-body);
   font-size: var(--fs-base);
@@ -156,7 +142,6 @@ p {
   text-align: center;
   max-width: 60ch;
   margin: 0 auto var(--space-lg);
-  font-family: var(--font-body);
   font-size: var(--fs-md);
   line-height: var(--lh-loose);
   color: var(--text-soft);
@@ -166,17 +151,15 @@ p {
 .caption {
   font-family: var(--font-body);
   font-size: var(--fs-sm);
-  line-height: var(--lh-normal);
   color: var(--text-soft);
-  margin-top: 0.5rem;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  margin-top: 0.5rem;
 }
 
 
 /* --------------------------------------------------
    PAGE INTRO BLOCK
-   -------------------------------------------------- */
+-------------------------------------------------- */
 .page-intro {
   margin: var(--space-xl) auto var(--space-lg);
   padding: 0 var(--space-sm);
@@ -185,82 +168,123 @@ p {
   color: var(--oak-gold);
 }
 
-.page-intro .page-title {
-  margin-bottom: var(--space-lg);
-  text-shadow: 0 2px 4px var(--shadow-strong);
-}
-
-.page-intro .page-description {
-  margin: 0 auto var(--space-lg);
-}
-
 
 /* --------------------------------------------------
-   NAVIGATION BAR
-   -------------------------------------------------- */
-/* ----------------------------------------
-   NAVIGATION — CLEAN, CENTERED, TIGHT
------------------------------------------ */
-
+   NAVIGATION — DESKTOP + MOBILE
+-------------------------------------------------- */
 .navbar {
   width: 100%;
   background: var(--wine-dark);
-  padding: 0.5rem 0;              /* was var(--space-lg) */
-  box-shadow: 0 2px 6px var(--shadow-strong);
+  padding: 0.5rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 6px var(--shadow-strong);
 }
 
 .navbar-inner {
-  max-width: 1100px;              /* keeps it full-width but controlled */
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 1.25rem;                   /* was var(--space-lg) */
-  padding: 0 1rem;                /* was 0 var(--space-lg) */
-  flex-wrap: wrap;                /* prevents tabs from running off */
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0 1rem;
 }
 
-.navbar a {
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
   font-family: var(--font-accent);
   font-size: var(--fs-sm);
   color: var(--text-warm);
   text-decoration: none;
-  letter-spacing: 0.02em;         /* was 0.5px */
-  padding: 0.25rem 0.5rem;        /* was var(--space-xs) var(--space-sm) */
+  padding: 0.25rem 0.5rem;
   border-radius: 4px;
   transition: color 0.2s ease, background 0.2s ease;
-  white-space: nowrap;            /* keeps each tab on one line */
+  white-space: nowrap;
 }
 
-.navbar a:hover {
+.nav-links a:hover {
   color: var(--oak-gold);
   background: rgba(153, 102, 51, 0.15);
 }
 
-.navbar a.active {
-  color: var(--oak-gold);
+.nav-links a.active {
   font-weight: 600;
+  color: var(--oak-gold);
+}
+
+/* Hamburger (right side) */
+.hamburger {
+  margin-left: auto;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--text-warm);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Floating mobile menu (A2) */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 55px;
+  right: 20px;
+  background: var(--wine-dark);
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-nav.open {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav a {
+  color: var(--oak-gold);
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }
 
 
 /* --------------------------------------------------
-   GALLERY
-   -------------------------------------------------- */
+   GALLERY — NEW WINDWOOD STYLE
+-------------------------------------------------- */
 .gallery {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
   margin: 0 auto var(--space-xl);
   padding: 0 var(--space-sm);
-}
-
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 .gallery-item img {
@@ -277,45 +301,108 @@ p {
   box-shadow: 0 6px 18px var(--shadow-strong);
 }
 
-/* Three images in a row */
-.three-row {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: nowrap;
+
+/* --------------------------------------------------
+   GALLERY — OLD MIDNIGHT STYLE (OPTIONAL)
+-------------------------------------------------- */
+.gallery-card-old {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  border: 2px solid #444;
+  border-radius: 12px;
+  background: #222;
+  padding: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
-.three-row .gallery-item {
-  flex: 1 1 0;
-  max-width: 220px;
+.gallery-card-old img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.gallery-card-old p {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #e6e6e6;
 }
 
 
 /* --------------------------------------------------
-   IMAGE CARD
-   -------------------------------------------------- */
-.image-card {
-  background: rgba(0, 0, 0, 0.25);
-  border: 2px solid rgba(153, 102, 51, 0.35);
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+   THREE-ROW SCROLLER
+-------------------------------------------------- */
+.three-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 1rem;
 }
 
-.image-card img {
+.three-row > div {
+  flex: 0 0 auto;
+  width: 30%;
+  min-width: 200px;
+  border: 4px solid #444;
+  border-radius: 12px;
+  background: #222;
+  padding: 6px;
+  scroll-snap-align: start;
+}
+
+
+/* --------------------------------------------------
+   ZOOMABLE IMAGES
+-------------------------------------------------- */
+.zoomable {
+  display: block;
   width: 100%;
-  border-radius: 6px;
+  cursor: zoom-in;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms;
 }
 
-.image-card .caption {
-  margin-top: 0.75rem;
+.zoomable:hover {
+  transform: scale(1.06);
+}
+
+.zoomable.zoomed {
+  cursor: zoom-out;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+
+/* --------------------------------------------------
+   BACK TO TOP BUTTON
+-------------------------------------------------- */
+#back-to-top {
+  position: fixed;
+  top: 45%;
+  right: 20px;
+  transform: translateY(-45%);
+  background: var(--oak-gold);
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #000;
+  outline: 1px solid #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
 /* --------------------------------------------------
    FOOTER
-   -------------------------------------------------- */
+-------------------------------------------------- */
 .footer {
   background: var(--wine-dark);
   padding: var(--space-lg) 0;
