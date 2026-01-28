@@ -5,91 +5,107 @@
 
 
 /* --------------------------------------------------
-   ROOT TYPOGRAPHY VARIABLES
+   ROOT VARIABLES
    -------------------------------------------------- */
 :root {
-  /* Font families */
   --font-title: 'Tangerine', cursive;
   --font-body: 'Lora', serif;
   --font-accent: 'Laila', serif;
 
-  /* Font sizes (scalable rhythm) */
-  --fs-xxl: 4rem;     /* Hero titles */
-  --fs-xl: 3rem;      /* Page titles */
-  --fs-lg: 2rem;      /* Section headers */
-  --fs-md: 1.25rem;   /* Body large */
-  --fs-base: 1rem;    /* Body default */
-  --fs-sm: 0.9rem;    /* Captions */
-  --fs-xs: 0.75rem;   /* Tiny labels */
+  --fs-xxl: 4rem;
+  --fs-xl: 3rem;
+  --fs-lg: 2rem;
+  --fs-md: 1.25rem;
+  --fs-base: 1rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.75rem;
 
-  /* Line heights */
   --lh-tight: 1.1;
   --lh-normal: 1.5;
   --lh-loose: 1.7;
 
-  /* Colors (typography-focused) */
+  --black: #000000;
+  --wine-dark: #330000;
+  --walnut: #663300;
+  --oak-gold: #996633;
+
+  --grey-soft: #cccccc;
+  --grey-light: #eeeeee;
+
   --text-light: #f5f5f5;
-  --text-soft: #ccc;
-  --text-warm: #996633;
-  --text-body: #ddd;
-}
+  --text-soft: var(--grey-soft);
+  --text-warm: var(--oak-gold);
+  --text-body: #dddddd;
 
-/* --------------------------------------------------
-   CENTERED LAYOUT FRAME
-   -------------------------------------------------- */
+  --shadow-strong: rgba(0,0,0,0.7);
+  --shadow-soft: rgba(0,0,0,0.5);
 
-.page-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 2rem;
-
-  /* Warm walnut glow */
-  background: rgba(153, 102, 51, 0.08);
-
-  /* Stronger inner glow */
-  box-shadow:
-    0 0 50px rgba(0, 0, 0, 0.7),
-    inset 0 0 40px rgba(0, 0, 0, 0.55);
-
-  /* Visible rails */
-  border-left: 2px solid rgba(153, 102, 51, 0.25);
-  border-right: 2px solid rgba(153, 102, 51, 0.25);
-
-  border-radius: 6px;
-}
-
-
-body {
-  background: radial-gradient(
-    circle at center,
-    #000000 0%,
-    #0a0a0a 40%,
-    #000000 100%
-  );
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
 }
 
 
 /* --------------------------------------------------
-   GLOBAL TEXT DEFAULTS
+   GLOBAL BACKGROUND + TEXT DEFAULTS
    -------------------------------------------------- */
 body {
+  background: radial-gradient(circle at center, #000000 0%, #0a0a0a 40%, #000000 100%);
   font-family: var(--font-body);
   font-size: var(--fs-base);
   line-height: var(--lh-normal);
   color: var(--text-body);
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 
 /* --------------------------------------------------
-   TITLES (Tangerine)
+   MASTER PAGE FRAME (ONLY WIDTH CONSTRAINT)
+   -------------------------------------------------- */
+.page-container {
+  width: 100%;
+  max-width: 900px;        /* ← THIS is the real width */
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  background: rgba(153, 102, 51, 0.08);
+  border-left: 2px solid rgba(153, 102, 51, 0.25);
+  border-right: 2px solid rgba(153, 102, 51, 0.25);
+  border-radius: 6px;
+
+  box-shadow:
+    0 0 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Everything inside the frame uses full width of the frame */
+.page-content,
+.gallery,
+.image-card,
+.navbar-inner,
+.homepage-sections,
+.about-content,
+.homepage-intro,
+.homepage-section {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+/* --------------------------------------------------
+   TITLES
    -------------------------------------------------- */
 .site-title {
   font-family: 'Tangerine', cursive;
   font-size: 4rem;
   font-weight: 400;
-  color: #b86a4c; /* warm red‑wood tone */
+  color: #b86a4c;
   text-align: center;
   margin: 0;
   padding: 0.5rem 0;
@@ -105,26 +121,15 @@ body {
   background: linear-gradient(to right, transparent, #b86a4c, transparent);
 }
 
-.page-description {
-  text-align: center;
-  max-width: 60ch;
-  margin: 0 auto var(--space-lg);
-  font-family: var(--font-body);
-  font-size: var(--fs-md);
-  line-height: var(--lh-loose);
-  color: var(--text-soft);
-  text-shadow: 0 1px 2px var(--shadow-soft);
-}
-
 .page-title,
 h1.page-title {
   font-family: var(--font-title);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--text-warm);
   line-height: var(--lh-tight);
   text-align: center;
-  margin: 0 0 1rem;
+  margin: 0 0 3rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
@@ -138,19 +143,8 @@ h1.page-title {
 
 
 /* --------------------------------------------------
-   BODY TEXT (Lora)
+   BODY TEXT + CAPTIONS
    -------------------------------------------------- */
-.page-description {
-  font-family: var(--font-body);
-  font-size: var(--fs-md);
-  line-height: var(--lh-loose);
-  color: var(--text-soft);
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-}
-
 p {
   font-family: var(--font-body);
   font-size: var(--fs-base);
@@ -158,10 +152,17 @@ p {
   color: var(--text-body);
 }
 
+.page-description {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto var(--space-lg);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--text-soft);
+  text-shadow: 0 1px 2px var(--shadow-soft);
+}
 
-/* --------------------------------------------------
-   CAPTIONS (Lora)
-   -------------------------------------------------- */
 .caption {
   font-family: var(--font-body);
   font-size: var(--fs-sm);
@@ -174,251 +175,25 @@ p {
 
 
 /* --------------------------------------------------
-   ACCENTS & SUBHEADINGS (Laila)
-   -------------------------------------------------- */
-.subheading {
-  font-family: var(--font-accent);
-  font-size: var(--fs-md);
-  font-weight: 600;
-  color: var(--text-warm);
-  margin: 1.5rem 0 0.5rem;
-  letter-spacing: 0.5px;
-}
-
-.label {
-  font-family: var(--font-accent);
-  font-size: var(--fs-xs);
-  color: var(--text-soft);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-   
-}
-:root {
-  /* Core brand colors */
-  --black: #000000;
-  --wine-dark: #330000;
-  --walnut: #663300;
-  --oak-gold: #996633;
-
-  /* Neutrals */
-  --grey-soft: #cccccc;
-  --grey-light: #eeeeee;
-
-  /* Text colors */
-  --text-light: #f5f5f5;
-  --text-soft: var(--grey-soft);
-  --text-warm: var(--oak-gold);
-  --text-body: #dddddd;
-
-  /* Shadows */
-  --shadow-strong: rgba(0,0,0,0.7);
-  --shadow-soft: rgba(0,0,0,0.5);
-}
-
-.divider {
-  width: 100%;
-  margin: 2.5rem 0;
-}
-
-.divider-line {
-  height: 2px;
-  background: var(--walnut);
-  opacity: 0.7;
-  margin: 3px 0;
-}
-
-.divider-line.center {
-  background: var(--grey-soft);
-  opacity: 0.5;
-}
-
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-line center"></div>
-  <div class="divider-line"></div>
-</div>
-
-:root {
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 3rem;
-  --space-xl: 5rem;
-}
-
-/* --------------------------------------------------
-   GALLERY CONTAINER
-   -------------------------------------------------- */
-.gallery {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  max-width: 800px;
-  margin: 0 auto var(--space-xl);
-  padding: 0 var(--space-sm);
-}
-
-/* --------------------------------------------------
-   GALLERY ITEM
-   -------------------------------------------------- */
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* --------------------------------------------------
-   GALLERY IMAGES
-   -------------------------------------------------- */
-.gallery-item img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px var(--shadow-strong);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.015);
-  box-shadow: 0 6px 18px var(--shadow-strong);
-}
-
-/* Three images in a row */
-.three-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: nowrap;
-}
-
-.three-row .gallery-item {
-  flex: 1 1 0;
-  max-width: 220px;
-}
-
-/* --------------------------------------------------
-   GALLERY CAPTIONS
-   -------------------------------------------------- */
-.gallery-item .caption {
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
-  color: var(--text-soft);
-  margin-top: var(--space-sm);
-  max-width: 800px;
-  text-shadow: 0 1px 2px var(--shadow-soft);
-  line-height: var(--lh-normal);
-}
-
-.gallery-item img {
-  background: var(--wine-dark);
-  padding: 6px;
-  border-radius: 8px;
-}
-
-/* --------------------------------------------------
-   IMAGE CARD (image + caption inside one border)
-   -------------------------------------------------- */
-
-.image-card {
-  background: rgba(0, 0, 0, 0.25); /* subtle dark panel */
-  border: 2px solid rgba(153, 102, 51, 0.35); /* warm walnut tone */
-  border-radius: 8px;
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-}
-
-.image-card img {
-  width: 100%;
-  border-radius: 6px;
-  display: block;
-}
-
-.image-card .caption {
-  margin-top: 0.75rem;
-  font-size: var(--fs-sm);
-  color: var(--text-soft);
-  text-align: center;
-  line-height: var(--lh-normal);
-}
-
-.three-row {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: nowrap;
-}
-
-.three-row .image-card {
-  flex: 1 1 0;
-  max-width: 220px;
-}
-
-/* --------------------------------------------------
-   MOBILE GALLERY TWEAKS
-   -------------------------------------------------- */
-@media (max-width: 600px) {
-  .gallery {
-    gap: var(--space-md);
-  }
-
-  .gallery-item img {
-    border-radius: 4px;
-  }
-
-  .gallery-item .caption {
-    font-size: 0.85rem;
-    padding: 0 var(--space-xs);
-  }
-}
-
-@media (max-width: 600px) {
-  .three-row {
-    flex-wrap: wrap;
-  }
-}
-
-/* --------------------------------------------------
    PAGE INTRO BLOCK
    -------------------------------------------------- */
 .page-intro {
-  margin: 3rem auto var(--space-lg);
-  max-width: 60ch;
   margin: var(--space-xl) auto var(--space-lg);
-  color: var(--oak-gold);
-  margin-top: 1.5rem; /* increase until it feels right */
   padding: 0 var(--space-sm);
   text-align: center;
+  max-width: 60ch;
+  color: var(--oak-gold);
 }
 
-/* Title (Tangerine) */
 .page-intro .page-title {
-  font-family: var(--font-title);
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  color: var(--oak-gold);
   margin-bottom: var(--space-lg);
-  line-height: var(--lh-tight);
   text-shadow: 0 2px 4px var(--shadow-strong);
 }
 
-/* Description (Lora) */
 .page-intro .page-description {
-  text-align: center;
-  max-width: 60ch; /* keeps it readable */
-  margin-left: auto;
-  margin-right: auto;
-  font-family: var(--font-body);
-  font-size: var(--fs-md);
-  line-height: var(--lh-loose);
-  color: var(--text-soft);
-  max-width: 800px;
   margin: 0 auto var(--space-lg);
-  text-shadow: 0 1px 2px var(--shadow-soft);
 }
+
 
 /* --------------------------------------------------
    NAVIGATION BAR
@@ -434,17 +209,14 @@ p {
 }
 
 .navbar-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
   display: flex;
   justify-content: center;
   gap: var(--space-lg);
+  padding: 0 var(--space-lg);
 }
 
-/* Nav links */
 .navbar a {
-  font-family: var(--font-accent); /* Laila */
+  font-family: var(--font-accent);
   font-size: var(--fs-sm);
   color: var(--text-warm);
   text-decoration: none;
@@ -454,250 +226,97 @@ p {
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-/* Hover effect */
 .navbar a:hover {
   color: var(--oak-gold);
-  background: rgba(153, 102, 51, 0.15); /* oak gold tint */
+  background: rgba(153, 102, 51, 0.15);
 }
 
-/* Active page indicator */
 .navbar a.active {
   color: var(--oak-gold);
   font-weight: 600;
 }
 
-/* Mobile tweaks */
-@media (max-width: 600px) {
-  .navbar-inner {
-    gap: var(--space-md);
-  }
-
-  .navbar a {
-    font-size: 0.85rem;
-    padding: var(--space-xs);
-  }
-}
 
 /* --------------------------------------------------
-   HOMEPAGE SECTIONS
+   GALLERY
    -------------------------------------------------- */
-.homepage-sections {
-  max-width: 800px;
-  margin: 0 auto var(--space-xl);
-  padding: 0 var(--space-sm);
+.gallery {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--space-sm);
 }
 
-.homepage-section {
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.homepage-section .section-title {
-  font-family: var(--font-title);
-  font-size: var(--fs-lg);
-  color: var(--oak-gold);
-  margin-bottom: var(--space-xs);
-  text-shadow: 0 2px 4px var(--shadow-strong);
+.gallery-item img {
+  width: 100%;
+  border-radius: 6px;
+  background: var(--wine-dark);
+  padding: 6px;
+  box-shadow: 0 4px 12px var(--shadow-strong);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.section-description {
-  font-family: var(--font-body);
-  font-size: var(--fs-base);
-  color: var(--text-soft);
-  margin-bottom: var(--space-sm);
-  text-shadow: 0 1px 2px var(--shadow-soft);
+.gallery-item img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 18px var(--shadow-strong);
 }
 
-.section-link {
-  font-family: var(--font-accent);
-  font-size: var(--fs-sm);
-  color: var(--oak-gold);
-  text-decoration: none;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 4px;
-  background: rgba(153, 102, 51, 0.15);
-  transition: background 0.2s ease, color 0.2s ease;
+/* Three images in a row */
+.three-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: nowrap;
 }
 
-.section-link:hover {
-  background: rgba(153, 102, 51, 0.25);
-  color: var(--text-light);
+.three-row .gallery-item {
+  flex: 1 1 0;
+  max-width: 220px;
 }
 
-/* Mobile tweaks */
-@media (max-width: 600px) {
-  .homepage-sections {
-    gap: var(--space-lg);
-  }
-}
 
 /* --------------------------------------------------
-   FOOTER COMPONENT
+   IMAGE CARD
+   -------------------------------------------------- */
+.image-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(153, 102, 51, 0.35);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.image-card .caption {
+  margin-top: 0.75rem;
+}
+
+
+/* --------------------------------------------------
+   FOOTER
    -------------------------------------------------- */
 .footer {
   background: var(--wine-dark);
   padding: var(--space-lg) 0;
   text-align: center;
   color: var(--text-soft);
-  font-family: var(--font-accent); /* Laila */
+  font-family: var(--font-accent);
   font-size: var(--fs-sm);
   letter-spacing: 0.5px;
   margin-top: var(--space-xl);
   box-shadow: 0 -2px 6px var(--shadow-strong);
 }
 
-/* Optional subtle top divider */
-.footer-divider {
-  width: 100%;
-  margin-bottom: var(--space-md);
-}
-
-.footer-divider-line {
-  height: 2px;
-  background: var(--walnut);
-  opacity: 0.7;
-  margin: 3px 0;
-}
-
-.footer-divider-line.center {
-  background: var(--grey-soft);
-  opacity: 0.5;
-}
-
-/* --------------------------------------------------
-   ABOUT PAGE CONTENT
-   -------------------------------------------------- */
-.about-content {
-  max-width: 800px;
-  margin: 0 auto var(--space-xl);
-  padding: 0 var(--space-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  font-family: var(--font-body);
-  font-size: var(--fs-base);
-  line-height: var(--lh-loose);
-  color: var(--text-soft);
-  text-shadow: 0 1px 2px var(--shadow-soft);
-}
-
-/* --------------------------------------------------
-   HOMEPAGE HERO
-   -------------------------------------------------- */
-.homepage-hero {
-  max-width: 600px;
-  margin: var(--space-xl) auto var(--space-lg);
-  text-align: center;
-  padding: 0 var(--space-sm);
-}
-
-.hero-logo {
-  width: 60%; 
-  max-width: 500px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: contain;
-}
-
-
-.hero-tagline {
-  margin-top: var(--space-sm);
-  font-family: var(--font-accent);
-  font-size: var(--fs-lg);
-  color: var(--oak-gold);
-  text-shadow: 0 1px 2px var(--shadow-strong);
-}
-
-/* --------------------------------------------------
-   HOMEPAGE CONTENT
-   -------------------------------------------------- */
-.homepage-intro,
-.homepage-section {
-  max-width: 800px;
-  margin: var(--space-xl) auto;
-  padding: 0 var(--space-sm);
-  text-align: center;
-}
-
-.homepage-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-md) 0;
-  font-family: var(--font-body);
-  font-size: var(--fs-base);
-  color: var(--text-soft);
-  line-height: var(--lh-loose);
-}
-
-.philosophy-text {
-  font-family: var(--font-body);
-  font-size: var(--fs-base);
-  color: var(--text-soft);
-  line-height: var(--lh-loose);
-  text-shadow: 0 1px 2px var(--shadow-soft);
-}
-
-/* --------------------------------------------------
-   LIGHTBOX OVERLAY (Clean, no-zoom)
-   -------------------------------------------------- */
-
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.lightbox-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 6px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.8);
-}
-
-/* Close button */
-.lightbox-close {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 10000;
-  user-select: none;
-}
-
-/* Navigation arrows */
-.lightbox-arrow {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3rem;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-  padding: 0 1rem;
-  z-index: 10000;
-}
-
-.lightbox-arrow.left {
-  left: 20px;
-}
-
-.lightbox-arrow.right {
-  right: 20px;
-}
