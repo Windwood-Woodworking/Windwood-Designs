@@ -1,0 +1,86 @@
+/* --------------------------------------------------
+   LIGHTBOX OVERLAY
+-------------------------------------------------- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox-overlay.open {
+  display: flex;
+}
+
+/* --------------------------------------------------
+   LIGHTBOX IMAGE
+-------------------------------------------------- */
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+
+/* --------------------------------------------------
+   CAPTION
+-------------------------------------------------- */
+.lightbox-caption {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: var(--text-soft);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  max-width: 80%;
+  text-align: center;
+}
+
+/* --------------------------------------------------
+   NAVIGATION ARROWS
+-------------------------------------------------- */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--oak-gold);
+  cursor: pointer;
+  user-select: none;
+  padding: 0 1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.lightbox-arrow.left {
+  left: 20px;
+}
+
+.lightbox-arrow.right {
+  right: 20px;
+}
+
+.lightbox-arrow:hover {
+  color: #d8a96a;
+}
+
+/* --------------------------------------------------
+   CLOSE BUTTON
+-------------------------------------------------- */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: var(--oak-gold);
+  cursor: pointer;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.lightbox-close:hover {
+  color: #d8a96a;
+}
