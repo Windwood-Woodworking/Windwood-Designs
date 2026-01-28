@@ -2,8 +2,31 @@
   <h1 class="site-title">Windwood Designs</h1>
 </header>
 
-<nav class="navbar">
+<header class="navbar">
   <div class="navbar-inner">
+
+    <!-- CENTERED NAV LINKS (desktop) -->
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+      <li><a href="{{ '/gallery/wall-art.html' | relative_url }}">Wall Art</a></li>
+      <li><a href="{{ '/gallery/mirror-frames.html' | relative_url }}">Mirror Frames</a></li>
+      <li><a href="{{ '/gallery/carvings.html' | relative_url }}">Carvings</a></li>
+      <li><a href="{{ '/gallery/furniture.html' | relative_url }}">Furniture</a></li>
+      <li><a href="{{ '/gallery/mantels.html' | relative_url }}">Mantels</a></li>
+      <li><a href="{{ '/gallery/boxes.html' | relative_url }}">Boxes</a></li>
+      <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+    </ul>
+
+    <!-- RIGHT: Hamburger (mobile only) -->
+    <button class="hamburger" aria-label="Menu">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- MOBILE NAV PANEL -->
+  <nav class="mobile-nav">
     <a href="{{ '/' | relative_url }}">Home</a>
     <a href="{{ '/about.html' | relative_url }}">About</a>
     <a href="{{ '/gallery/wall-art.html' | relative_url }}">Wall Art</a>
@@ -13,6 +36,14 @@
     <a href="{{ '/gallery/mantels.html' | relative_url }}">Mantels</a>
     <a href="{{ '/gallery/boxes.html' | relative_url }}">Boxes</a>
     <a href="{{ '/contact.html' | relative_url }}">Contact</a>
-  </div>
-</nav>
+  </nav>
+</header>
 
+<script>
+  const burger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  burger.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+</script>
