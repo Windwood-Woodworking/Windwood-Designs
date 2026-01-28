@@ -198,10 +198,14 @@ p {
 /* --------------------------------------------------
    NAVIGATION BAR
    -------------------------------------------------- */
+/* ----------------------------------------
+   NAVIGATION — CLEAN, CENTERED, TIGHT
+----------------------------------------- */
+
 .navbar {
   width: 100%;
   background: var(--wine-dark);
-  padding: var(--space-lg) 0;
+  padding: 0.5rem 0;              /* was var(--space-lg) */
   box-shadow: 0 2px 6px var(--shadow-strong);
   position: sticky;
   top: 0;
@@ -209,10 +213,13 @@ p {
 }
 
 .navbar-inner {
+  max-width: 1100px;              /* keeps it full-width but controlled */
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: var(--space-lg);
-  padding: 0 var(--space-lg);
+  gap: 1.25rem;                   /* was var(--space-lg) */
+  padding: 0 1rem;                /* was 0 var(--space-lg) */
+  flex-wrap: wrap;                /* prevents tabs from running off */
 }
 
 .navbar a {
@@ -220,10 +227,11 @@ p {
   font-size: var(--fs-sm);
   color: var(--text-warm);
   text-decoration: none;
-  letter-spacing: 0.5px;
-  padding: var(--space-xs) var(--space-sm);
+  letter-spacing: 0.02em;         /* was 0.5px */
+  padding: 0.25rem 0.5rem;        /* was var(--space-xs) var(--space-sm) */
   border-radius: 4px;
   transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;            /* keeps each tab on one line */
 }
 
 .navbar a:hover {
