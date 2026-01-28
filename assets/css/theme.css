@@ -421,7 +421,7 @@ p {
 .navbar {
   width: 100%;
   background: var(--wine-dark);
-  padding: var(--space-sm) 0;
+  padding: var(--space-lg) 0;
   box-shadow: 0 2px 6px var(--shadow-strong);
   position: sticky;
   top: 0;
@@ -431,7 +431,7 @@ p {
 .navbar-inner {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 var(--space-sm);
+  padding: 0 var(--space-lg);
   display: flex;
   justify-content: center;
   gap: var(--space-lg);
@@ -441,7 +441,7 @@ p {
 .navbar a {
   font-family: var(--font-accent); /* Laila */
   font-size: var(--fs-sm);
-  color: var(--text-soft);
+  color: var(--text-warm);
   text-decoration: none;
   letter-spacing: 0.5px;
   padding: var(--space-xs) var(--space-sm);
