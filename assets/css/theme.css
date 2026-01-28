@@ -102,14 +102,15 @@ body {
   width: 60%;
   height: 2px;
   margin: 0.4rem auto 0;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #b86a4c,
-    transparent
-  );
+  background: linear-gradient(to right, transparent, #b86a4c, transparent);
 }
 
+.page-description {
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .page-title,
 h1.page-title {
