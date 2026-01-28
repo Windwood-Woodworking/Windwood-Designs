@@ -125,7 +125,7 @@ h1.page-title {
   line-height: var(--lh-tight);
   text-align: center;
   margin: 0 0 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
