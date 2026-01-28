@@ -399,6 +399,28 @@ p {
   pointer-events: auto;
 }
 
+/* --------------------------------------------------
+   Hero section
+-------------------------------------------------- */
+.hero {
+  text-align: center;
+  margin: var(--space-xl) auto var(--space-lg);
+}
+
+.hero-logo {
+  width: 280px;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: var(--space-md);
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--text-soft);
+  margin-bottom: var(--space-md);
+}
+
 
 /* --------------------------------------------------
    FOOTER
