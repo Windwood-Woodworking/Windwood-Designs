@@ -382,7 +382,8 @@ p {
 .page-intro {
   max-width: 800px;
   margin: var(--space-xl) auto var(--space-lg);
-  margin-top: 2.5rem; /* increase until it feels right */
+  color: var(--oak-gold);
+  margin-top: 1.5rem; /* increase until it feels right */
   padding: 0 var(--space-sm);
   text-align: center;
 }
