@@ -181,6 +181,11 @@ p {
   z-index: 100;
   box-shadow: 0 2px 6px var(--shadow-strong);
 }
+.navbar .site-title {
+  color: #773f1a;
+  font-weight: 700;
+}
+
 
 .navbar-inner {
   max-width: 1100px;
