@@ -113,7 +113,7 @@ body {
   width: 60%;
   height: 2px;
   margin: 0.4rem auto 0;
-  background: linear-gradient(to right, transparent, var(--oak-gold), transparent);
+  background: linear-gradient(to right, transparent, var(--walnut), transparent);
 }
 
 .page-title {
