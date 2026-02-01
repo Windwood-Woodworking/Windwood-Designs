@@ -100,8 +100,8 @@ body {
 .site-title {
   font-family: var(--font-title);
   font-size: 4rem;
-  font-weight: 400;
-  color: var(--oak-gold);
+  font-weight: 700;
+  color: var(--walnut);
   text-align: center;
   margin: 0;
   padding: 0.5rem 0;
